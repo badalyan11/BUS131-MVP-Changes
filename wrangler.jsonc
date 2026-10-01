@@ -1,0 +1,13 @@
+{
+  // Tells Cloudflare to deploy this as a plain static site (the dist/ folder
+  // from `npm run build`), instead of trying to auto-configure a Vite/Workers
+  // integration that requires Vite 6+. This is all a static React app needs.
+  "name": "1st-mvp",
+  "compatibility_date": "2026-09-27",
+  "assets": {
+    "directory": "./dist",
+    // Falls back to index.html for client-side routes (e.g. /capture, /memory/:id)
+    // so refreshing or deep-linking into the app doesn't 404.
+    "not_found_handling": "single-page-application"
+  }
+}
